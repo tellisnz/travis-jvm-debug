@@ -7,6 +7,7 @@ WORKDIR /home/travis
 RUN /bin/bash -lc "gem install travis -v 1.8.2 --no-doc --no-ri ; \
 gem install bundler ; \
 git clone https://github.com/travis-ci/travis-build.git ~/.travis/travis-build ; \
+git -C ~/.travis/travis-build checkout ec4f888d3757; \
 bundle install --gemfile ~/.travis/travis-build/Gemfile ; \
 mkdir build ; \
 echo \"export TRAVIS_BUILD_APT_PACKAGE_WHITELIST=https://raw.githubusercontent.com/travis-ci/apt-package-whitelist/master/ubuntu-precise\" >> .bashrc ; \
